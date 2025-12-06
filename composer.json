@@ -1,0 +1,15 @@
+{
+    "name": "gusta/estudents-directory",
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        }
+    },
+    "authors": [
+        {
+            "name": "one-centavo",
+            "email": "gustavoadolfocabrera15@gmail.com"
+        }
+    ],
+    "require": {}
+}
