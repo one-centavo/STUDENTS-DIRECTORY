@@ -1,12 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="http://localhost/students-directory/public/css/output.css">
-    <title>Document</title>
-</head>
-<body class="">
-    
-</body>
-</html>
+<?php
+    const BASE_PATH = __DIR__ . "/";
+    require_once BASE_PATH . "vendor/autoload.php";
+    require_once BASE_PATH . "config/app.php";
+
+    if(session_status() === PHP_SESSION_NONE){
+        session_start();
+    }
+    use App\router;
+    $router = new router();
+    $router->execute();
+?>
