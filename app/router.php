@@ -21,6 +21,7 @@ class Router
 
         $this->controller = $url[0] ?? 'login';
         $this->method     = $url[1] ?? 'index';
+        $this->params     = array_slice($url, 2);
     }
 
     public function execute(): void
