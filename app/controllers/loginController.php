@@ -5,6 +5,9 @@
 
     class loginController {
         public function index() {
-            View::renderOnly("login");
+            View::renderOnly("login", ["msg" => ""]);
         }
+
+        
+        
     }
