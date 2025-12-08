@@ -1,6 +1,6 @@
 <?php
 
     const DB_SERVER = "localhost";
-    const DB_NAME = "STUDENTS-DIRECTORY";
+    const DB_NAME = "students_directory";
     const DB_USER = "root";
     const DB_PASS = "";
