@@ -16,6 +16,11 @@
             return $this->db->query($sql, $params);
         }
 
+        public function getPrograms(){
+            $sql = "SELECT * FROM programs";
+            return $this->db->query($sql);
+        }
+
         
     }
 
