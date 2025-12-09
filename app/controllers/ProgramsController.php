@@ -1,0 +1,57 @@
+<?php
+
+    namespace App\Controllers;
+    use App\Core\View;
+    use App\Models\ProgramsModel;
+
+    class ProgramsController {
+        private $programsModel;
+
+        public function __construct()
+        {
+            $this->programsModel = new ProgramsModel();
+        }
+
+        public function index() {
+            View::render($_GET['views'], [
+                'message' => ''
+            ]);
+        }
+
+        public function addProgram(){
+            if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+                header('Content-Type: application/json');
+
+                if(!isset($_POST['program_name']) || empty(trim($_POST['program_name']))){
+                    echo json_encode(
+                    [
+                        'boolean' => false,
+                        'response' => 'Rellene todos los campos obligatorios'
+                    ]);
+
+                    return;
+                    exit;
+                }
+                $name = trim($_POST['program_name']);
+                $params = [
+                    'name' => $name
+                ];
+
+                if($this->programsModel->addProgram($params)){
+                    echo json_encode(
+                    [
+                        'boolean' => true,
+                        'response' => 'Programa agregado exitosamente'
+                    ]);
+                    exit;
+                } else {
+                    echo json_encode(
+                    [
+                        'boolean' => false,
+                        'response' => 'Error al agregar el programa'
+                    ]);
+                    exit;
+                }
+            }
+        }
+    }

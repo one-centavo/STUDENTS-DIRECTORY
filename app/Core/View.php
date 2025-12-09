@@ -1,14 +1,14 @@
 <?php
 
-    namespace App;
+    namespace App\Core;
     
-    class view{
+    class View{
         public static function render(string $view, array $data = []){
             extract($data);
             
             $viewPath = "app/views/{$view}-view.php";
             if(!file_exists($viewPath)){
-                view::renderOnly("404");
+                View::renderOnly("404");
                 return;
             }
 

@@ -1,11 +1,11 @@
 <?php
     namespace App\controllers;
-    use App\View;
+    use App\Core\View;
     
 
     class loginController {
         public function index() {
-            View::renderOnly("login", ["msg" => ""]);
+            View::renderOnly($_GET['views'], ["msg" => ""]);
         }
 
         

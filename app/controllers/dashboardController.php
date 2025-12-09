@@ -1,6 +1,6 @@
 <?php
 namespace App\controllers;
-use App\View;
+use App\Core\View;
 class dashboardController{
     public function index(){
         View::render("dashboard");

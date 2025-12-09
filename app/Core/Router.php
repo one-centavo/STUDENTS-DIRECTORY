@@ -1,8 +1,8 @@
 <?php
 
-namespace App;
+namespace App\Core;
 
-use App\View;
+use App\Core\View;
 
 class Router
 {
@@ -17,16 +17,16 @@ class Router
 
     private function parseRoute(): void
     {
-        $url = isset($_GET['views']) ? explode('/', trim($_GET['views'], '/')) : [];
+        $url = isset($_GET['views']) ? explode('/', trim(ucfirst($_GET['views']), '/')) : [];
 
-        $this->controller = $url[0] ?? 'login';
+        $this->controller = $url[0] ?? ucfirst('login');
         $this->method     = $url[1] ?? 'index';
         $this->params     = array_slice($url, 2);
     }
 
     public function execute(): void
     {
-        $controllerClass = "App\\controllers\\{$this->controller}Controller";
+        $controllerClass = "App\\Controllers\\{$this->controller}Controller";
 
         if (!class_exists($controllerClass)) {
             View::renderOnly("404");
