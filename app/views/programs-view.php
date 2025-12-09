@@ -16,6 +16,39 @@
 </section>
 
 
+<section class="flex flex-row flex-wrap gap-6 p-6 lg:gap-8 w-full justify-center">
+
+    <?php 
+        if($programs): 
+        foreach($programs as $program):    
+    ?>
+    <article class="rounded-lg bg-white shadow-md w-11/12 md:max-w-xs">
+        <div class="bg-blue-400 px-8 py-6 rounded-t-md text-white font-medium">
+            <p class="text-white"><?= htmlspecialchars($program['program_name']); ?></p>
+        </div>
+        <div class="flex flex-col p-8 gap-4">
+            <div class="flex flex-col gap-2 justify-center items-center bg-blue-100 p-4 rounded-3xl border border-blue-300">
+                <p class="text-blue-600">2 estudiantes inscritos</p>
+            </div>
+            <div class="flex flex-row gap-2 justify-center">
+                <button  type="button" class="flex-1 p-2 bg-blue-400 text-white hover:bg-blue-500 transition-all duration-300 ease-in-out rounded-md">
+                    Editar
+                </button>
+                <button type="button" class="flex-1 p-2 bg-red-400 text-white hover:bg-red-500 transition-all duration-300 ease-in-out rounded-md">
+                Eliminar
+                </button>
+            </div>
+        </div>
+       
+    </article>
+    <?php 
+        endforeach; 
+        else:
+    ?>
+        <p class="text-center text-slate-600">No hay programas registrados</p>
+    <?php endif; ?>
+</section>
+
 
 
 

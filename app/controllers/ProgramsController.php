@@ -14,7 +14,7 @@
 
         public function index() {
             View::render($_GET['views'], [
-                'message' => ''
+                'programs' => $this->getPrograms()
             ]);
         }
 
@@ -53,5 +53,9 @@
                     exit;
                 }
             }
+        }
+
+        protected function getPrograms(){
+            return $this->programsModel->getPrograms();
         }
     }
