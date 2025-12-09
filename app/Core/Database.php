@@ -1,13 +1,13 @@
 <?php
 
-    namespace App;
+    namespace App\Core;
     use PDO;
     use PDOException;
-    if(file_exists(__DIR__.'/../config/server.php')){
-        require_once __DIR__.'/../config/server.php';
+    if(file_exists(__DIR__.'/../../config/server.php')){
+        require_once __DIR__.'/../../config/server.php';
     }
 
-    class main{
+    class Database{
         private $server = DB_SERVER;
         private $username = DB_USER;
         private $pass = DB_PASS;
@@ -28,9 +28,15 @@
             }
         }
 
-        protected function query($sql, $data = []){
-            $stmt = $this->connection()->prepare($sql);
-            $stmt->execute($data);
-            return $stmt;
+        public function query($sql, $data = []){
+            
+            try{
+                $stmt = $this->connection()->prepare($sql);
+                $stmt->execute($data);
+                return $stmt;
+            }catch(PDOException $e){
+                die("Query failed: " . $e->getMessage() . " in the line " . $e->getLine() . " of the file " . $e->getFile());
+            }
+           
         }
     }

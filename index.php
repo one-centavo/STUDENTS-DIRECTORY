@@ -6,7 +6,7 @@
     if(session_status() === PHP_SESSION_NONE){
         session_start();
     }
-    use App\router;
-    $router = new router();
+    use App\Core\Router;
+    $router = new Router();
     $router->execute();
 ?>
