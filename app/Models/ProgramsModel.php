@@ -21,6 +21,19 @@
             return $this->db->query($sql);
         }
 
+        public function updateProgram($params){
+            $sql = "UPDATE programs SET program_name = :name WHERE id_program = :id";
+            return $this->db->query($sql, $params);
+        }
+
+        public function deleteProgram($id){
+            $sql = "DELETE FROM programs WHERE id_program = :id";
+            $params = [
+                'id' => $id
+            ];
+            return $this->db->query($sql, $params);
+        }
+
         
     }
 

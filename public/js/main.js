@@ -4,7 +4,7 @@
 const btnHamburger = document.getElementById("btnHamburger")
 const btnOpenFormAdd = document.getElementById("btnOpenModal");
 const btnCloseFormAdd = document.getElementById("btnCloseModal");
-const btnOpenModalEdit = document.getElementById("btnOpenModalEdit");
+const btnOpenModalEdit = document.querySelectorAll(".btnOpenModalEdit");
 const btnCloseModalEdit = document.getElementById("btnCloseModalEdit");
 
 function menu() {
@@ -52,19 +52,25 @@ function closeModal(id,formId) {
   document.body.style.overflowY = "";
 }
 
-function getDataEdit(event){
-    const parent = event.target.parentElement;
+function getDataEdit(){
+    const id = this.getAttribute("data-id");
+    const name = this.getAttribute("data-name");
+
+    const modalFormEdit = document.getElementById("modalFormEdit");
+    modalFormEdit.id_program.value = id;
+    modalFormEdit.program_name.value = name;
 }
 
 
 
-const formProductSearch = document.getElementById("product-search");
-if (formProductSearch){
-    formProductSearch.addEventListener("submit", handleProductSearch);
-}
 
 btnOpenFormAdd?.addEventListener("click", () => openModal("modal","modalForm"));
 btnCloseFormAdd?.addEventListener("click", () => closeModal("modal","modalForm"));
 btnHamburger?.addEventListener("click", menu);
-btnOpenModalEdit?.addEventListener("click", () => openModal("modalEdit","modalFormEdit"));
+btnOpenModalEdit.forEach(button => {
+    button.addEventListener("click", function() {
+        getDataEdit.call(this);
+        openModal("modalEdit","modalFormEdit");
+    });
+});
 btnCloseModalEdit?.addEventListener("click", () => closeModal("modalEdit","modalFormEdit"));
