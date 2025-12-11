@@ -1,6 +1,3 @@
-
-
-
 const btnHamburger = document.getElementById("btnHamburger")
 const btnOpenFormAdd = document.getElementById("btnOpenModal");
 const btnCloseFormAdd = document.getElementById("btnCloseModal");
@@ -61,6 +58,14 @@ function getDataEdit(){
     modalFormEdit.program_name.value = name;
 }
 
+function uploadFile(event,imagen){
+    const fileInput = event.target.files[0];
+    if(fileInput){
+      const objectUrl = URL.createObjectURL(fileInput);
+      imagen.src = objectUrl;
+      imagen.style.display = "block";
+    }
+}
 
 
 
