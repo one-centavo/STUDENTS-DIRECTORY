@@ -48,6 +48,10 @@ function closeConfirmationModal(boolean){
 }
 
 const formAdd = document.getElementById("modalForm");
+const formEdit = document.getElementById("modalFormEdit");
 if (formAdd){
     formAdd.addEventListener("submit", getDataForm);
+}
+if (formEdit){
+    formEdit.addEventListener("submit", getDataForm);
 }
