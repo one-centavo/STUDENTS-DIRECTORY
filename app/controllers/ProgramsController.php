@@ -55,7 +55,7 @@
             }
         }
 
-        protected function getPrograms(){
+        public function getPrograms(){
             return $this->programsModel->getPrograms();
         }
 

@@ -18,7 +18,8 @@
 
         public function getPrograms(){
             $sql = "SELECT * FROM programs";
-            return $this->db->query($sql);
+            $query = $this->db->query($sql);
+            return $query->fetchAll();
         }
 
         public function updateProgram($params){

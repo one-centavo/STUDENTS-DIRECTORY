@@ -20,19 +20,19 @@
 <nav class="fixed top-16 right-0 translate-x-full h-full w-full bg-white text-black transition-transform ease-in-out duration-300 max-w-md flex flex-col lg:hidden z-50" id="navMenu">
   <ul class="p-4 flex flex-col">
     <li class="w-full p-4 border-b border-gray-200">
-      <a class="flex justify-between items-center w-full" href="<?= APP_URL; ?>dashboard/">Dashboard <span>&#10095;</span></a>
+      <a class="flex justify-between items-center w-full" href="<?= APP_URL; ?>dashboard">Dashboard <span>&#10095;</span></a>
     </li>
     <li class="w-full p-4 border-b border-gray-200">
-      <a class="flex justify-between items-center w-full" href="<?= APP_URL; ?>programs/">Programas <span>&#10095;</span></a>
+      <a class="flex justify-between items-center w-full" href="<?= APP_URL; ?>programs">Programas <span>&#10095;</span></a>
     </li>
     <li class="w-full p-4 border-b border-gray-200">
-      <a class="flex justify-between items-center w-full" href="<?= APP_URL; ?>students/">Estudiantes <span>&#10095;</span></a>
+      <a class="flex justify-between items-center w-full" href="<?= APP_URL; ?>students">Estudiantes <span>&#10095;</span></a>
     </li>
     <li class="w-full p-4 border-b border-gray-200">
-      <a class="flex justify-between items-center w-full" href="<?= APP_URL; ?>bin/">Papelera <span>&#10095;</span></a>
+      <a class="flex justify-between items-center w-full" href="<?= APP_URL; ?>bin">Papelera <span>&#10095;</span></a>
     </li>
     <li class="w-full p-4 border-t border-gray-300 mt-auto">
-      <a class="flex gap-2 items-center text-red-600" href="<?= APP_URL; ?>logout/">
+      <a class="flex gap-2 items-center text-red-600" href="<?= APP_URL; ?>logout">
         <svg class="w-5 h-5"><use href="#logout"></use></svg>
         Cerrar Sesión
       </a>
@@ -42,10 +42,10 @@
 
 
 <nav class="hidden lg:flex lg:flex-col lg:w-72 lg:h-dvh lg:bg-white   lg:text-black lg:shadow-2xl ">
-    <div class="flex flex-row gap-2 bg-blue-400 p-6">
+    <div class="flex flex-row gap-2 bg-blue-400 p-6 items-center">
       <div class="flex items-center justify-cent rounded-md p-4">
-        <svg class="w-9 h-9 text-green-600">
-            <use href="#user"></use>
+        <svg class="w-9 h-9 text-white">
+            <use href="#graduation-cap"></use>
         </svg>
       </div>
       <p class="text-left text-white ">
@@ -56,26 +56,26 @@
 
     <ul class="flex flex-col p-7 gap-4">
         <li class="flex flex-row gap-2 items-center w-full rounded-md p-3">
-            <svg class="w-6 h-6" viewBox="0 0 24 24">
+            <svg class="w-6 h-6 text-black" viewBox="0 0 24 24">
                 <use href="#dashboard"></use>
             </svg>
             <a href="<?= APP_URL ;?>dashboard" class="block w-full h-full">Dashboard</a>
         </li>
         <li class="flex flex-row gap-2 items-center w-full rounded-md p-3">
             <svg class="w-6 h-6" viewBox="0 0 24 24">
-                <use href="#product"></use>
+                <use href="#graduation-cap"></use>
             </svg>
             <a href="<?= APP_URL ;?>programs" class="block w-full h-full">Programas</a>
         </li>
         <li class="flex flex-row gap-2 items-center w-full rounded-md p-3">
             <svg class="w-6 h-6" viewBox="0 0 24 24">
-                <use href="#category"></use>
+                <use href="#users"></use>
             </svg>
             <a href="<?= APP_URL ;?>students" class="block w-full h-full">Estudiantes</a>
         </li>
         <li class="flex flex-row gap-2 items-center w-full rounded-md p-3">
             <svg class="w-6 h-6" viewBox="0 0 24 24">
-                <use href="#users"></use>
+                <use href="#trash"></use>
             </svg>
             <a href="<?= APP_URL ;?>users" class="block w-full h-full">Papelera</a>
         </li>
